@@ -1,0 +1,24 @@
+server:
+  servlet:
+    context-path: /api
+
+logging.level.dev.langchain4j: DEBUG
+logging.level.dev.ai4j.openai4j: DEBUG
+logging.level.org.springframework.web: DEBUG
+
+langchain4j:
+  rag:
+    retrieval:
+      max-results: 2
+      min-score: 0.5
+  open-ai:
+    chat-model:
+      api-key: ${OPEN_AI_API_KEY:xxx}
+      model-name: ${OPEN_AI_MODEL_NAME:gpt-4o-mini}
+      temperature: 0.1
+      log-requests: true
+      log-responses: true
+
+opensearch:
+  url: ${OPENSEARCH_URL:http://localhost:9200}
+  index: ecb_rag
