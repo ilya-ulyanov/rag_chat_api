@@ -1,10 +1,7 @@
 package com.capgemini.demos.rag;
 
 import dev.langchain4j.data.document.Document;
-import dev.langchain4j.data.document.DocumentParser;
 import dev.langchain4j.data.document.loader.FileSystemDocumentLoader;
-import dev.langchain4j.data.document.loader.UrlDocumentLoader;
-import dev.langchain4j.data.document.parser.apache.tika.ApacheTikaDocumentParser;
 import dev.langchain4j.data.segment.TextSegment;
 import dev.langchain4j.store.embedding.EmbeddingStore;
 import dev.langchain4j.store.embedding.EmbeddingStoreIngestor;

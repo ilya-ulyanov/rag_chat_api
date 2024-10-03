@@ -22,3 +22,6 @@ langchain4j:
 opensearch:
   url: ${OPENSEARCH_URL:http://localhost:9200}
   index: ecb_rag
+
+ingestion:
+  documents-path: ${DOCUMENTS_PATH:/home/illia/projects/ecb_demo/docs}

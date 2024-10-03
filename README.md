@@ -23,7 +23,9 @@ docker build . -t cap_rag_demo_api:latest
 ```shell
 docker run -d --name rag_api \
   -p 12001:8080 \
+  -v /home/llama/rag_demo/rag_docs:/rag_docs \
   -e OPEN_AI_API_KEY=xxx \
-  -e OPENSEARCH_URL=http://x.x.x.x:9200 \
+  -e OPENSEARCH_URL=http://10.1.0.4:9200 \
+  -e DOCUMENTS_PATH=/rag_docs
   cap_rag_demo_api:latest
 ```
