@@ -1,6 +1,12 @@
-FROM eclipse-temurin:21-jre-alpine
-RUN addgroup -S raguser && adduser -S raguser -G raguser
+FROM maven:3-eclipse-temurin-21-alpine AS builder
+WORKDIR /app
+COPY . .
+RUN mvn -B package -DskipTests
+
+FROM eclipse-temurin:21-jre-ubi9-minimal
+RUN useradd raguser
 USER raguser
-ARG JAR_FILE
-COPY ${JAR_FILE} app.jar
+
+COPY --from=builder /app/target/rag_chat_api.jar app.jar
+
 ENTRYPOINT ["java", "-jar", "/app.jar"]
