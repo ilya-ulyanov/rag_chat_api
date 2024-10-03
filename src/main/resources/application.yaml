@@ -9,8 +9,8 @@ logging.level.org.springframework.web: DEBUG
 langchain4j:
   rag:
     retrieval:
-      max-results: 2
-      min-score: 0.5
+      max-results: 4
+      min-score: 0.0
   open-ai:
     chat-model:
       api-key: ${OPEN_AI_API_KEY:xxx}
