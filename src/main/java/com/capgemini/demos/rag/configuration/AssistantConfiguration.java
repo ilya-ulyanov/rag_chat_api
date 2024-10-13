@@ -14,7 +14,7 @@ import org.springframework.context.annotation.Configuration;
 public class AssistantConfiguration {
     @Bean
     ChatMemoryProvider chatMemoryProvider() {
-        return memoryId -> MessageWindowChatMemory.withMaxMessages(10);
+        return memoryId -> MessageWindowChatMemory.withMaxMessages(20);
     }
 
     @Bean
