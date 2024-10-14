@@ -1,4 +1,5 @@
 server:
+  port: 12001
   servlet:
     context-path: /api
 
@@ -10,7 +11,7 @@ langchain4j:
   rag:
     retrieval:
       max-results: 4
-      min-score: 0.0
+      min-score: 0.5
   open-ai:
     chat-model:
       api-key: ${OPEN_AI_API_KEY:xxx}
