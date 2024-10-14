@@ -30,7 +30,7 @@ public class IngestionController {
             .builder()
             .embeddingStore(embeddingStore)
             .embeddingModel(embeddingModel)
-            .documentSplitter(DocumentSplitters.recursive(1000, 200, new HuggingFaceTokenizer()))
+            .documentSplitter(DocumentSplitters.recursive(500, 50, new HuggingFaceTokenizer()))
             .build();
 
         ingestor.ingest(documents);
